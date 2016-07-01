@@ -5,6 +5,14 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sumIntro", "sumIntro\sumIntro.csproj", "{F5234BCD-96BB-4E42-A4F2-F9FBFA0431DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavePrisioners", "SavePrisioners\SavePrisioners.csproj", "{5C9F59CC-8DFC-44A1-B06E-A318128AAFAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeConversion", "TimeConversion\TimeConversion.csproj", "{902C7286-8817-4960-9178-5BAFE24D527F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and The Beast", "Sherlock and The Beast\Sherlock and The Beast.csproj", "{BE3E4050-4E42-4613-B404-66026BE94A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and beast 2", "Cherlock and beast 2\Sherlock and beast 2.csproj", "{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{F5234BCD-96BB-4E42-A4F2-F9FBFA0431DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5234BCD-96BB-4E42-A4F2-F9FBFA0431DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5234BCD-96BB-4E42-A4F2-F9FBFA0431DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9F59CC-8DFC-44A1-B06E-A318128AAFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9F59CC-8DFC-44A1-B06E-A318128AAFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9F59CC-8DFC-44A1-B06E-A318128AAFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9F59CC-8DFC-44A1-B06E-A318128AAFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902C7286-8817-4960-9178-5BAFE24D527F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902C7286-8817-4960-9178-5BAFE24D527F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902C7286-8817-4960-9178-5BAFE24D527F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902C7286-8817-4960-9178-5BAFE24D527F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE3E4050-4E42-4613-B404-66026BE94A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE3E4050-4E42-4613-B404-66026BE94A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE3E4050-4E42-4613-B404-66026BE94A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE3E4050-4E42-4613-B404-66026BE94A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
