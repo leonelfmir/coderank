@@ -13,6 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and The Beast", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and beast 2", "Cherlock and beast 2\Sherlock and beast 2.csproj", "{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equal Stacks", "Equal Stacks\Equal Stacks.csproj", "{EC296871-ABBA-4217-9FD9-A9F329D0881D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenlyDivision", "EvenlyDivision\EvenlyDivision.csproj", "{554C2509-D8E5-46A7-9957-EFFACB330CD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cut the sticks", "Cut the sticks\Cut the sticks.csproj", "{DFC94262-70E8-4D8B-AD25-EC0A1B797E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bribes", "Bribes\Bribes.csproj", "{EBDD3936-650C-4F57-A57E-687834CBBC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minimumDistanceArr", "minimumDistanceArr\minimumDistanceArr.csproj", "{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +49,26 @@ Global
 		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B5ECED4-8CD5-460C-89C4-2189A61F6A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC296871-ABBA-4217-9FD9-A9F329D0881D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC296871-ABBA-4217-9FD9-A9F329D0881D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC296871-ABBA-4217-9FD9-A9F329D0881D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC296871-ABBA-4217-9FD9-A9F329D0881D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554C2509-D8E5-46A7-9957-EFFACB330CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554C2509-D8E5-46A7-9957-EFFACB330CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554C2509-D8E5-46A7-9957-EFFACB330CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554C2509-D8E5-46A7-9957-EFFACB330CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC94262-70E8-4D8B-AD25-EC0A1B797E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC94262-70E8-4D8B-AD25-EC0A1B797E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC94262-70E8-4D8B-AD25-EC0A1B797E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC94262-70E8-4D8B-AD25-EC0A1B797E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDD3936-650C-4F57-A57E-687834CBBC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDD3936-650C-4F57-A57E-687834CBBC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDD3936-650C-4F57-A57E-687834CBBC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDD3936-650C-4F57-A57E-687834CBBC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
