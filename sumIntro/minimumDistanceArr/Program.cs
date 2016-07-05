@@ -30,9 +30,11 @@ namespace minimumDistanceArr
             {
                 for(int i = 1; i < kv.Value.Count; i++)
                 {
-                    if()
+                    if (i == 0)
+                        return 0;
                 }
             }
+            return 0;
         }
     }
 }
