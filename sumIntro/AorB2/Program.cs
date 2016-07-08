@@ -61,7 +61,10 @@ namespace AorB2
             if (changes < k)
                 minimize(ref ca, ref cb, k - changes);
 
-            string res = string.Format("{0}\n{1}", convertBinToHex(ca), convertBinToHex(cb));
+            string resa = convertBinToHex(ca);
+            string resb = convertBinToHex(cb);
+
+            string res = string.Format("{0}\n{1}", resa == ""?"0":resa, resb == "" ? "0" : resb);
             Console.WriteLine(res);
 
         }
@@ -138,13 +141,13 @@ namespace AorB2
             return A.ToString().TrimStart('0');
         }
 
-        //static void printarr(char[] arr)
-        //{
-        //    foreach (var c in arr)
-        //    {
-        //        Console.Write(c + " ");
-        //    }
-        //    Console.WriteLine();
-        //}
+        static void printarr(char[] arr)
+        {
+            foreach (var c in arr)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
