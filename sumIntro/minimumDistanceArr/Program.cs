@@ -10,11 +10,7 @@ namespace minimumDistanceArr
     {
         static void Main(string[] args)
         {
-            int[] A = { 7, 1, 2, 4, 0,2, 7 };
 
-            Console.Write(minDist(A));
-            
-            Console.Read();
         }
 
         static int minDist(int[] A)
@@ -29,17 +25,16 @@ namespace minimumDistanceArr
                 D[A[i]].Add(i);
             }
 
-            int min = int.MaxValue;
+            int max = -1;
             foreach(KeyValuePair<int, List<int>> kv in D)
             {
                 for(int i = 1; i < kv.Value.Count; i++)
                 {
-                    if (kv.Value[i] - kv.Value[i - 1] < min)
-                        min = kv.Value[i] - kv.Value[i - 1];
+                    if (i == 0)
+                        return 0;
                 }
             }
-
-            return min == int.MaxValue?-1:min;
+            return 0;
         }
     }
 }
