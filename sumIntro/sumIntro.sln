@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bribes", "Bribes\Bribes.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minimumDistanceArr", "minimumDistanceArr\minimumDistanceArr.csproj", "{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Non-Divisible Subset", "Non-Divisible Subset\Non-Divisible Subset.csproj", "{8B2E7A6C-D004-4786-9F79-B059A35054E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Non-DivisbleSubset-2", "Non-DivisbleSubset-2\Non-DivisbleSubset-2.csproj", "{A89800A8-4202-44ED-8FEB-8F1D3D492384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DA17AA4-DEE2-44E5-A315-90A1BF1822C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2E7A6C-D004-4786-9F79-B059A35054E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2E7A6C-D004-4786-9F79-B059A35054E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2E7A6C-D004-4786-9F79-B059A35054E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2E7A6C-D004-4786-9F79-B059A35054E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89800A8-4202-44ED-8FEB-8F1D3D492384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89800A8-4202-44ED-8FEB-8F1D3D492384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89800A8-4202-44ED-8FEB-8F1D3D492384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89800A8-4202-44ED-8FEB-8F1D3D492384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
