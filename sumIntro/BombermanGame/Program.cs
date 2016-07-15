@@ -10,19 +10,21 @@ namespace BombermanGame
     {
         static void Main(string[] args)
         {
-            string[] rcn = Console.ReadLine().Split(' ');
-            int r = int.Parse(rcn[0]);
-            int c = int.Parse(rcn[1]);
-            long n = long.Parse(rcn[2]);
-            string[] rows = new string[r];
-            for (int i = 0; i < r; i++)
+            while (true)
             {
-                rows[i] = Console.ReadLine();
+                string[] rcn = Console.ReadLine().Split(' ');
+                int r = int.Parse(rcn[0]);
+                int c = int.Parse(rcn[1]);
+                long n = long.Parse(rcn[2]);
+                string[] rows = new string[r];
+                for (int i = 0; i < r; i++)
+                {
+                    rows[i] = Console.ReadLine();
+                }
+
+                char[,] G = grid(rows, r, c, n);
+                printG(G);
             }
-
-            char[,] G = grid(rows, r, c, n);
-            printG(G);
-
             Console.Read();
 
         }
@@ -31,7 +33,7 @@ namespace BombermanGame
         {
             char[,] G = new char[R, C];
             HashSet<Tuple<int,int>> bombs = new HashSet<Tuple<int, int>>();
-            //HashSet<Tuple<int,int>> bombs2 = new HashSet<Tuple<int, int>>();
+            HashSet<Tuple<int,int>> bombs2 = new HashSet<Tuple<int, int>>();
             Dictionary<Tuple<int, int>, HashSet<Tuple<int, int>>> D = new Dictionary<Tuple<int, int>, HashSet<Tuple<int, int>>>();
 
             //fill bombs array
