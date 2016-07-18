@@ -15,26 +15,8 @@ namespace aChessBoardGame1
             Console.WriteLine(winner(8, 8, dp));
 
             int dimension = 15+1;
-            char[][] table = new char[dimension][];
 
-            for (int i = 0; i < dimension; i++)
-            {
-                table[i] = new char[dimension];
-            }
-
-            foreach(KeyValuePair<Tuple<int, int>, bool> kv in dp)
-            {
-                table[kv.Key.Item1][kv.Key.Item2] = kv.Value?'x':'o';
-            };
-
-            int line = 0;
-            foreach (var item in table)
-            {
-                Console.WriteLine(line++.ToString().PadLeft(2) + string.Join("  ", item));
-            }
-            Console.WriteLine("".PadLeft(5) + string.Join("  ", Enumerable.Range(1,15)));
-
-
+            printTable(dimension,dp);
             int T = int.Parse(Console.ReadLine());
             for (int i = 0; i < T; i++)
             {
@@ -56,21 +38,23 @@ namespace aChessBoardGame1
             dp[new Tuple<int, int>(2, 1)] = true;
             dp[new Tuple<int, int>(2, 2)] = true;
 
-            Queue<Tuple<int, int>> toVisit = new Queue<Tuple<int, int>>();
+            Queue<Tuple<int, int>> toVisitW = new Queue<Tuple<int, int>>();
+            Queue<Tuple<int, int>> toVisitL = new Queue<Tuple<int, int>>();
             HashSet<Tuple<int, int>> visited = new HashSet<Tuple<int, int>>();
 
             foreach (Tuple<int, int> vl in dp.Keys)
             {
-                toVisit.Enqueue(vl);
+                toVisitW.Enqueue(vl);
             }
 
             Tuple<int, int> current;
             //int r = 0;
             //int c = 0;
-            while (toVisit.Count > 0)
+            while (toVisitW.Count > 0 || toVisitL.Count > 0)
             {
                 //Console.WriteLine(string.Join(" - ", dp.Keys.Select(x => string.Join(",", x))));
-                current = toVisit.Dequeue();
+                current = toVisitW.Count > 0? toVisitW.Dequeue(): toVisitL.Dequeue();
+
                 if (visited.Contains(current))
                     continue;
 
@@ -78,25 +62,44 @@ namespace aChessBoardGame1
 
                 foreach (var pos in positions(current))
                 {
-                    //winning position
-                    if (dp[current])
+                    if(! visited.Contains(pos))
                     {
-                        dp[pos] = false;
-                    }
-                    else
-                    {
-                        if (!dp.ContainsKey(pos))
-                        {
-                            dp[pos] = true;
-                        }
-                    }
+                        if(!dp.ContainsKey(pos))
+                            dp[pos] = !dp[current];
 
-                    if (!visited.Contains(pos))
-                        toVisit.Enqueue(pos);
+                        if (dp[current])
+                            toVisitL.Enqueue(pos);
+                        else
+                            toVisitW.Enqueue(pos);
+
+                        
+                    }
+                    
+
+                    ////winning position
+                    //if (dp[current])
+                    //{
+                    //    dp[pos] = false;
+                    //}
+                    //else
+                    //{//losing position
+                    //    if (!dp.ContainsKey(pos))
+                    //    {
+                    //        dp[pos] = true;
+                    //    }
+                    //}
+
+                    //if (!visited.Contains(pos))
+                    //{
+                    //    //dp[pos] = !dp[current];
+                    //    toVisit.Enqueue(pos);
+                    //}
                 }
+                Console.WriteLine(current.Item1 + " " + current.Item2);
+                printTable(15 + 1, dp);
             }
 
-            return dp[new Tuple<int, int>(R, C)];
+            return true;//dp[new Tuple<int, int>(R, C)];
         }
 
         static List<Tuple<int, int>> positions(Tuple<int, int> pos)
@@ -120,13 +123,35 @@ namespace aChessBoardGame1
             {
                 //d2l1
                 if (c - 1 > 0)
-                    res.Add(new Tuple<int, int>(r + 2, c + -1));
+                    res.Add(new Tuple<int, int>(r + 2, c - 1));
                 //d2r1
                 if (c + 1 <= 15)
                     res.Add(new Tuple<int, int>(r + 2, c + 1));
             }
 
             return res;
+        }
+
+        static void printTable(int dimension, Dictionary<Tuple<int, int>, bool> dp)
+        {
+            char[][] table = new char[dimension][];
+
+            for (int i = 0; i < dimension; i++)
+            {
+                table[i] = new char[dimension];
+            }
+
+            foreach (KeyValuePair<Tuple<int, int>, bool> kv in dp)
+            {
+                table[kv.Key.Item1][kv.Key.Item2] = kv.Value ? 'x' : 'o';
+            };
+
+            int line = 0;
+            foreach (var item in table)
+            {
+                Console.WriteLine(line++.ToString().PadLeft(2) + string.Join("  ", item));
+            }
+            Console.WriteLine("".PadLeft(5) + string.Join("  ", Enumerable.Range(1, dimension)));
         }
 
         //static bool[,] tablePos(int n, List<int[]> losers)
