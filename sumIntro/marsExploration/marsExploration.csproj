@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8EDD921-793B-4F3F-91DE-739290ECC362}</ProjectGuid>
+    <ProjectGuid>{B67D5552-3DC2-4E14-B0F2-04076C398BFD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Insertionsort2</RootNamespace>
-    <AssemblyName>Insertionsort2</AssemblyName>
+    <RootNamespace>marsExploration</RootNamespace>
+    <AssemblyName>marsExploration</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
