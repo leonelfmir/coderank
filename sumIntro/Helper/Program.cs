@@ -9,6 +9,8 @@ class Solution
     //string path = "00";
     //string[] lines = System.IO.File.ReadAllLines("input" + path + ".txt");
     //System.IO.File.WriteAllText("Output" + path + );
+    //int t = int.Parse(Console.ReadLine());
+    //int[] A = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
     static void Main(String[] args)
     {
         
