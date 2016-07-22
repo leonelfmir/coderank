@@ -21,9 +21,8 @@ namespace Insertionsort2
                 _ar[_ar_i] = Convert.ToInt32(split_elements[_ar_i]);
             }
 
-            insertionSort(_ar);
+            //insertionSort(_ar);
         }
 
-        static
     }
 }

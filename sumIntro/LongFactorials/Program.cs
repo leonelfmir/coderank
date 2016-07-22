@@ -21,7 +21,7 @@ namespace LongFactorials
                 res = BigInteger.Multiply(res, i);
             }
 
-            Console.WriteLine(x);
+            //Console.WriteLine(x);
 
             Console.Read();
         }
