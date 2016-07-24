@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E881DC66-8B4B-4BE2-9D2B-052551150163}</ProjectGuid>
+    <ProjectGuid>{B8EDD921-793B-4F3F-91DE-739290ECC362}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Insertionsort2</RootNamespace>

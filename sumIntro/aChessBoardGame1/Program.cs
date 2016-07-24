@@ -11,10 +11,11 @@ namespace aChessBoardGame1
         static void Main(string[] args)
         {
             Dictionary<Tuple<int, int>, bool> dp = new Dictionary<Tuple<int, int>, bool>();
-            
-            Console.WriteLine(winner(8, 8, dp));
+            int dimension = 15;
 
-            int dimension = 15+1;
+            Console.WriteLine(winner(8, 8, dp, dimension));
+
+            
             char[][] table = new char[dimension][];
 
             for (int i = 0; i < dimension; i++)
@@ -24,15 +25,15 @@ namespace aChessBoardGame1
 
             foreach(KeyValuePair<Tuple<int, int>, bool> kv in dp)
             {
-                table[kv.Key.Item1][kv.Key.Item2] = kv.Value?'x':'o';
+                table[kv.Key.Item1][kv.Key.Item2] = kv.Value?'X':'O';
             };
 
             int line = 0;
+            Console.WriteLine("".PadLeft(5) + string.Join("  ", Enumerable.Range(1, dimension).Select(x => x = x % 10)));
             foreach (var item in table)
             {
-                Console.WriteLine(line++.ToString().PadLeft(2) + string.Join("  ", item));
+                Console.WriteLine(line++.ToString().PadLeft(2).PadRight(5) + string.Join("  ", item));
             }
-            Console.WriteLine("".PadLeft(5) + string.Join("  ", Enumerable.Range(1,15)));
 
 
             int T = int.Parse(Console.ReadLine());
@@ -40,7 +41,7 @@ namespace aChessBoardGame1
             {
                 int[] p = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
 
-                Console.WriteLine("{0}", winner(p[0], p[1], dp)? "First" : "Second");
+                Console.WriteLine("{0}", winner(p[0], p[1], dp, dimension)? "First" : "Second");
             }
 
             Console.Read();
@@ -48,13 +49,13 @@ namespace aChessBoardGame1
 
         
 
-        static bool winner(int R, int C, Dictionary<Tuple<int, int>, bool> dp)
+        static bool winner(int R, int C, Dictionary<Tuple<int, int>, bool> dp, int dimension)
         {
             //winnning positions
+            dp[new Tuple<int, int>(0, 0)] = true;
+            dp[new Tuple<int, int>(0, 1)] = true;
+            dp[new Tuple<int, int>(1, 0)] = true;
             dp[new Tuple<int, int>(1, 1)] = true;
-            dp[new Tuple<int, int>(1, 2)] = true;
-            dp[new Tuple<int, int>(2, 1)] = true;
-            dp[new Tuple<int, int>(2, 2)] = true;
 
             Queue<Tuple<int, int>> toVisit = new Queue<Tuple<int, int>>();
             HashSet<Tuple<int, int>> visited = new HashSet<Tuple<int, int>>();
@@ -76,7 +77,7 @@ namespace aChessBoardGame1
 
                 visited.Add(current);
 
-                foreach (var pos in positions(current))
+                foreach (var pos in positions(current, dimension))
                 {
                     //winning position
                     if (dp[current])
@@ -99,30 +100,30 @@ namespace aChessBoardGame1
             return dp[new Tuple<int, int>(R, C)];
         }
 
-        static List<Tuple<int, int>> positions(Tuple<int, int> pos)
+        static List<Tuple<int, int>> positions(Tuple<int, int> pos, int dimension)
         {
             List<Tuple<int, int>> res = new List<Tuple<int, int>>();
             int r = pos.Item1;
             int c = pos.Item2;
 
             //r2
-            if (c + 2 <= 15)
+            if (c + 2 < dimension)
             {
                 //r2u1
-                if (r - 1 > 0)
+                if (r - 1 >= 0)
                     res.Add(new Tuple<int, int>(r - 1, c + 2));
                 //r2d1
-                if (r + 1 <= 15)
+                if (r + 1 < dimension)
                     res.Add(new Tuple<int, int>(r + 1, c + 2));
             }
             //d2
-            if (r + 2 <= 15)
+            if (r + 2 < dimension)
             {
                 //d2l1
-                if (c - 1 > 0)
+                if (c - 1 >= 0)
                     res.Add(new Tuple<int, int>(r + 2, c + -1));
                 //d2r1
-                if (c + 1 <= 15)
+                if (c + 1 < dimension)
                     res.Add(new Tuple<int, int>(r + 2, c + 1));
             }
 
