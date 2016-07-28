@@ -181,6 +181,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexValidateIPAdrress", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexFindAWord", "RegexFindAWord\RegexFindAWord.csproj", "{C7F4EBA0-DE8B-47AA-95E9-68849D333E60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexFindEmail", "RegexFindEmail\RegexFindEmail.csproj", "{F38EEB1E-B9BC-4DAD-B608-1E241D5A31B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexDomainName", "RegexDomainName\RegexDomainName.csproj", "{08019C18-379E-49AC-A9F2-0692EEF7138E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexIdentifyComments", "RegexIdentifyComments\RegexIdentifyComments.csproj", "{1972C0FE-12B1-46BE-A100-ED45C9E2B40D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexValidLatitudeLongitude", "RegexValidLatitudeLongitude\RegexValidLatitudeLongitude.csproj", "{0E456DD1-0B31-463B-A8C0-7674E86F70C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFindStrings", "StringFindStrings\StringFindStrings.csproj", "{82F690B7-5D10-4073-95E6-C45A7BC7AC40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPCandies", "DPCandies\DPCandies.csproj", "{195725DC-3D3B-485A-BB78-3B43E8E1739F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -543,6 +555,30 @@ Global
 		{C7F4EBA0-DE8B-47AA-95E9-68849D333E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7F4EBA0-DE8B-47AA-95E9-68849D333E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7F4EBA0-DE8B-47AA-95E9-68849D333E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F38EEB1E-B9BC-4DAD-B608-1E241D5A31B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38EEB1E-B9BC-4DAD-B608-1E241D5A31B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38EEB1E-B9BC-4DAD-B608-1E241D5A31B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38EEB1E-B9BC-4DAD-B608-1E241D5A31B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08019C18-379E-49AC-A9F2-0692EEF7138E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08019C18-379E-49AC-A9F2-0692EEF7138E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08019C18-379E-49AC-A9F2-0692EEF7138E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08019C18-379E-49AC-A9F2-0692EEF7138E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1972C0FE-12B1-46BE-A100-ED45C9E2B40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1972C0FE-12B1-46BE-A100-ED45C9E2B40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1972C0FE-12B1-46BE-A100-ED45C9E2B40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1972C0FE-12B1-46BE-A100-ED45C9E2B40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E456DD1-0B31-463B-A8C0-7674E86F70C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E456DD1-0B31-463B-A8C0-7674E86F70C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E456DD1-0B31-463B-A8C0-7674E86F70C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E456DD1-0B31-463B-A8C0-7674E86F70C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F690B7-5D10-4073-95E6-C45A7BC7AC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F690B7-5D10-4073-95E6-C45A7BC7AC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F690B7-5D10-4073-95E6-C45A7BC7AC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F690B7-5D10-4073-95E6-C45A7BC7AC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195725DC-3D3B-485A-BB78-3B43E8E1739F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195725DC-3D3B-485A-BB78-3B43E8E1739F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195725DC-3D3B-485A-BB78-3B43E8E1739F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195725DC-3D3B-485A-BB78-3B43E8E1739F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
