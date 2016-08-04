@@ -10,7 +10,9 @@ namespace DPGridWalking
     {
         static void Main(string[] args)
         {
-            string path = "01";
+            //Console.WriteLine(ModFactorial(100));
+            //Console.Read();
+            string path = "02";
             string[] lines = System.IO.File.ReadAllLines("input" + path + ".txt");
             int j = 0;
             int ij = int.Parse(lines[j++]);
@@ -21,8 +23,9 @@ namespace DPGridWalking
                 int M = NM[1];//steps
                 int[] X = Array.ConvertAll(lines[j++].Split(' '), int.Parse);
                 int[] D = Array.ConvertAll(lines[j++].Split(' '), int.Parse);
-                Console.WriteLine(sol(N, M, X, D));
-                Console.WriteLine(sol2(N, M, X, D));
+                Console.WriteLine("real sol: {0}", sol(N, M, X, D));
+                //Console.WriteLine(sol2(N, M, X, D));
+                //sol2(N, M, X, D);
 
             }
 
@@ -41,26 +44,45 @@ namespace DPGridWalking
 
         static int modulo = 1000000007;
 
-        static int sol(int N, int M, int[] X, int[] D)
+        static long sol(int N, int M, int[] X, int[] D)
         {
-            Dictionary<int[], int> dic = new Dictionary<int[], int>(new IntArrayEqualityComparer());
+            Dictionary<int[], long> dic = new Dictionary<int[], long>(new IntArrayEqualityComparer());
 
-            int res = stepsDims(D, M, X, dic);
+            long res = stepsDims(D, M, X, dic);
 
             return res;
         }
 
-        static double sol2(int N, int M, int[] X, int[] D)
-        {
-            //Dictionary<int[], int> dic = new Dictionary<int[], int>(new IntArrayEqualityComparer());
+        //static double sol2(int N, int M, int[] X, int[] D)
+        //{
+        //    //Dictionary<int[], int> dic = new Dictionary<int[], int>(new IntArrayEqualityComparer());
 
-            int i = 0;
-            double res = stepsD(X[i], D[i], M);
+        //    //int i = 0;
+        //    //double res = stepsD(X[i], D[i], M);
+        //    Dictionary<Tuple<int, int, int>, double> dic = new Dictionary<Tuple<int, int, int>, double>();//pos, posmax, steps
+        //    double[] res = new double[N];
 
-            return res;
-        }
+            
 
-        static int stepsDims(int[] D, int steps, int[] possitions, Dictionary<int[], int> dic)
+
+        //    //for (int i = 0; i < N; i++)
+        //    //{
+        //    //    for (int j = M; j >= 0; j--)
+        //    //    {
+        //    //        res[i] = stepsD2(X[i], D[i], j, dic);
+        //    //        Console.WriteLine("D: {0}, S:{1} = {2}", i, j, res[i]);
+        //    //    }
+        //    //}
+
+
+
+
+        //    //Console.WriteLine("res1: {0} \nres2: {1}", res, res2);
+        //    //var xx = res.Aggregate(1, (x, y) => x * y);
+        //    return res[0];
+        //}
+
+        static long stepsDims(int[] D, int steps, int[] possitions, Dictionary<int[], long> dic)
         {
 
             if (steps == 0)
@@ -74,7 +96,7 @@ namespace DPGridWalking
                 return dic[B];
 
             int N = D.Length;
-            int count = 0;
+            long count = 0;
             for (int i = 0; i < N; i++)
             {
                 //right
@@ -132,16 +154,53 @@ namespace DPGridWalking
         //    return stepsD[key] = r + l;
         //}
 
-        static double stepsD(int pos, int posMax, int steps)
-        {
-            double res = 0;
-            if (pos >= steps)
-                res += Math.Pow(2, steps) / 2;
-            if (steps + pos <= posMax)
-                res += Math.Pow(2, steps) / 2;
+        //static double stepsD(int pos, int posMax, int steps)
+        //{
+        //    double res = 0;
+        //    if (pos >= steps)
+        //        res += Math.Pow(2, steps) / 2;
+        //    if (steps + pos <= posMax)
+        //        res += Math.Pow(2, steps) / 2;
 
-            return res;
-        }
+        //    return res;
+        //}
+
+        //static double stepsD2(int pos, int posMax, int steps, Dictionary<Tuple<int, int, int>, double> dic)
+        //{
+        //    Tuple<int, int, int> tempT = new Tuple<int, int, int>(pos, posMax, steps);
+
+        //    if (dic.ContainsKey(tempT))
+        //        return dic[tempT];
+
+        //    if (steps == 0)
+        //        return dic[tempT] = 1;
+
+        //    double res = 0;
+
+        //    if (pos > 1)
+        //        res += stepsD2(pos - 1, posMax, steps - 1, dic);
+
+        //    if (pos < posMax)
+        //        res += stepsD2(pos + 1, posMax, steps - 1, dic);
+
+        //    return dic[tempT] = res;
+        //}
+
+        //static Dictionary<int, long> Fact = new Dictionary<int, long>();
+
+        ////returns modular factorial
+        //static long ModFactorial(int n)
+        //{
+        //    if (Fact.ContainsKey(n))
+        //        return Fact[n];
+
+        //    if (n == 0)
+        //        return 1;
+
+        //    return Fact[n] = (n * ModFactorial(n - 1)) % modulo;
+        //}
+
+        
     }
 
     public class IntArrayEqualityComparer : IEqualityComparer<int[]>
