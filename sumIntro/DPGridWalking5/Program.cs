@@ -10,7 +10,7 @@ namespace DPGridWalking5
     {
         static void Main(string[] args)
         {
-            pascalsTriangle = nk(300 + 1);
+            cnk = nk(300 + 1);
 
             string path = "00";
             string[] lines = System.IO.File.ReadAllLines("input" + path + ".txt");
@@ -30,22 +30,22 @@ namespace DPGridWalking5
             Console.Read();
         }
 
-        static long[,] pascalsTriangle;
+        static long[,] cnk;
         static int modulo = 1000000007;
 
         static long[,] nk(int size)
         {
             long[,] choose = new long[size, size];
 
-            for (int i = 0; i < size; i++)
+            for (int r = 0; r < size; r++)
             {
 
-                choose[i, 0] = choose[i, i] = 1;
+                choose[r, 0] = choose[r, r] = 1;
 
-                for (int j = 1; j < i; j++)
+                for (int c = 1; c < r; c++)
                 {
 
-                    choose[i, j] = (choose[i - 1, j - 1] + choose[i - 1, j]) % modulo;
+                    choose[r, c] = (choose[r - 1, c - 1] + choose[r - 1, c]) % modulo;
                 }
             }
 
@@ -55,29 +55,66 @@ namespace DPGridWalking5
         static long sol(int N, int M, int[] X, int[] D)
         {
             Dictionary<Tuple<int, int, int>, long> dic = new Dictionary<Tuple<int, int, int>, long>();//pos, posmax, steps
+            long[,] combinePaths = new long[N, M + 1];
 
-            long[][][] paths = new long[M][][];
-            for (int steps = 0; steps < M; steps++)
+
+            for (int n = 0; n < N; n++)
             {
-                paths[steps] = new long[N][];
-                for (int dim = 0; dim < N; dim++)
+
+                for (int m = 0; m <= M; m++)//steps
                 {
-                    paths[steps][dim] = new long[D[dim]];
-                    for (int pos = 0; pos < D[dim]; pos++)
-                    {
-                        paths[steps][dim][pos] = stepsOneD(pos, D[dim], steps, dic);
-                    }
+                    combinePaths[n, m] = stepsOneD(X[n], D[n], m, dic);
                 }
             }
 
-            Console.WriteLine(string.Join("\n", paths.Select(x => string.Join("\n", x.Select(string.Join("", x))));
-            return 0;
+            long[,] pathsIntegration = new long[N + 1, M + 1];
+
+            // Base cases
+
+            for (int m = 0; m <= M; m++)
+                pathsIntegration[0, m] = 1L;
+
+            for (int n = 0; n <= N; n++)
+                    pathsIntegration[n, 0] = 1L;
+
+                for (int m = 1; m <= M; m++)
+                pathsIntegration[1, m] = combinePaths[0, m];
+
+            // Recurrence relation
+
+            for (int d = 2; d <= N; d++)
+            {
+                for (int m = 1; m <= M; m++)
+                {
+
+                    long result = 0;
+
+                    for (int i = 0; i <= m; i++)
+                    {
+
+                        long binomialMod = cnk[m, i];
+                        long operand1 = pathsIntegration[d - 1, i];
+                        long operand2 = combinePaths[d - 1, m - i];
+
+                        long prod1 = (binomialMod * operand1) % modulo;
+                        long prod2 = (prod1 * operand2) % modulo;
+
+                        result += prod2;
+                    }
+
+                    pathsIntegration[d, m] = result % modulo;
+                }
+            }
+
+            return pathsIntegration[N,M];
 
         }
 
         static long stepsOneD(int pos, int posMax, int steps, Dictionary<Tuple<int, int, int>, long> dic)
         {
             Tuple<int, int, int> tempT = new Tuple<int, int, int>(pos, posMax, steps);
+            //if (pos == 3)
+            //    pos = 3;
 
             if (dic.ContainsKey(tempT))
                 return dic[tempT];
