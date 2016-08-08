@@ -12,7 +12,7 @@ namespace DPGridWalking5
         {
             cnk = nk(300 + 1);
 
-            string path = "00";
+            string path = "22";
             string[] lines = System.IO.File.ReadAllLines("input" + path + ".txt");
             int j = 0;
             int ij = int.Parse(lines[j++]);
@@ -24,6 +24,17 @@ namespace DPGridWalking5
                 int M = NM[1];//steps
                 int[] X = Array.ConvertAll(lines[j++].Split(' '), int.Parse);
                 int[] D = Array.ConvertAll(lines[j++].Split(' '), int.Parse);
+                Console.WriteLine(sol(N, M, X, D));
+            }
+
+            int t = int.Parse(Console.ReadLine());
+            for (int i = 0; i < t; i++)
+            {
+                int[] NM = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                int N = NM[0];//dimensions
+                int M = NM[1];//steps
+                int[] X = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                int[] D = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
                 Console.WriteLine(sol(N, M, X, D));
             }
 
@@ -67,20 +78,16 @@ namespace DPGridWalking5
                 }
             }
 
-            long[,] pathsIntegration = new long[N + 1, M + 1];
-
-            // Base cases
+            long[,] res = new long[N + 1, M + 1];
 
             for (int m = 0; m <= M; m++)
-                pathsIntegration[0, m] = 1L;
+                res[0, m] = 1;
 
             for (int n = 0; n <= N; n++)
-                    pathsIntegration[n, 0] = 1L;
+                    res[n, 0] = 1;
 
                 for (int m = 1; m <= M; m++)
-                pathsIntegration[1, m] = combinePaths[0, m];
-
-            // Recurrence relation
+                res[1, m] = combinePaths[0, m];
 
             for (int d = 2; d <= N; d++)
             {
@@ -91,22 +98,14 @@ namespace DPGridWalking5
 
                     for (int i = 0; i <= m; i++)
                     {
-
-                        long binomialMod = cnk[m, i];
-                        long operand1 = pathsIntegration[d - 1, i];
-                        long operand2 = combinePaths[d - 1, m - i];
-
-                        long prod1 = (binomialMod * operand1) % modulo;
-                        long prod2 = (prod1 * operand2) % modulo;
-
-                        result += prod2;
+                        result += ((res[d - 1, i] * cnk[m, i]) % modulo * (combinePaths[d - 1, m - i] % modulo)) % modulo;
                     }
 
-                    pathsIntegration[d, m] = result % modulo;
+                    res[d, m] = result % modulo;
                 }
             }
 
-            return pathsIntegration[N,M];
+            return res[N,M];
 
         }
 
