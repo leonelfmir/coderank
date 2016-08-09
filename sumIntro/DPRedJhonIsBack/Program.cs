@@ -8,40 +8,40 @@ namespace DPRedJhonIsBack
 {
     class Program
     {
-        static int[,] cnk;
-        static Dictionary<int, int> ps = new Dictionary<int, int>();
+        static long[,] cnk;
+        static Dictionary<long, int> ps = new Dictionary<long, int>();
 
         static void Main(string[] args)
         {
             cnk = nk(41);
-            Console.WriteLine(primes(40));
+            int s = 4;
+            //Console.WriteLine(sol(s));
             int t = int.Parse(Console.ReadLine());
             for (int i = 0; i < t; i++)
             {
                 int n = int.Parse(Console.ReadLine());
-                Console.WriteLine(sol(n));
+                Console.WriteLine("sol: {0}", sol(n));
             }
 
             Console.ReadLine();
         }
 
-        static int sol(int n)
+        static long sol(int n)
         {
-            int res = 0;
-            int rest = n / 4;
-            for(int i = 0; i <= rest; i++)
+            long res = 1;
+            n -= 4;
+            for (int i = 1; n >= 0; i++)
             {
-                n = n - 4;
-                res += cnk[(n < 0 ? 0: n) + 1, 1];
-                
+                res += cnk[n + i, i];
+                n -= 4;
             }
-
-            return res;
+            //Console.WriteLine("Res: {0}", res);
+            return primes(res);
         }
 
-        static int[,] nk(int size)
+        static long[,] nk(int size)
         {
-            int[,] choose = new int[size, size];
+            long[,] choose = new long[size, size];
 
             for (int r = 0; r < size; r++)
             {
@@ -58,12 +58,14 @@ namespace DPRedJhonIsBack
             return choose;
         }
 
-        static int primes(int n)
+        static int primes(long n)
         {
-            if()
+            if (ps.ContainsKey(n))
+                return ps[n];
+
             bool[] p = new bool[n+1];
 
-            for (int i = 2; i <= Math.Sqrt(n); i++)
+            for (int i = 2; i*i <= n; i++)
             {
                 if (p[i] == true)
                     continue;
@@ -76,7 +78,7 @@ namespace DPRedJhonIsBack
                 }
             }
 
-            return p.Count(x => !x) - 2;
+            return ps[n] = p.Count(x => !x) - 2;
         }
     }
 }
