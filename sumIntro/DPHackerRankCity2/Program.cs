@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DPHackerRankCity
+namespace DPHackerRankCity2
 {
     class Program
     {
+        static long mod = 1000000007;
+
         static void Main(string[] args)
         {
-            
+
             int n = int.Parse(Console.ReadLine());
             int[] A = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
             Console.WriteLine(sol(n, A));
@@ -26,7 +28,7 @@ namespace DPHackerRankCity
             long distance1stGPlus1 = 0;
             long distance2N = 0;
             long groupCount = 0;
-            
+
             for (int i = 0; i < n; i++)
             {
                 distance1stG = distance;
@@ -60,71 +62,39 @@ namespace DPHackerRankCity
 
         static long finalDistance(long D2n, long D1G, long D1Gp1, long GC, long TC)
         {
-            long DI = D2n + D1Gp1;
-            long res = DI + D1Gp1 * (TC - GC) + D1G;
+            
+            long res = (D2n + D1Gp1) % mod;
+            res = (res + D1G) % mod;
+            res = (res + (D1Gp1 * (TC - GC) % mod)) % mod;
 
             return res;
         }
 
         static long deleteNode(long currentDist, long sum, long amountToMirrow, int distance)
         {
-            return sum - currentDist * 2 - amountToMirrow * amountToMirrow * distance;
+            long res = (currentDist * 2) % mod;
+            long amount2 = (amountToMirrow * amountToMirrow) % mod;
+            amount2 = (amount2 * distance) % mod;
+            return sum - res - amount2;
         }
 
         static long mirror(long currentDist, long sum, long amountToMirrow)
         {
-            sum = currentDist * amountToMirrow * 2 + sum * 2;
-            return sum;
+            long res = (currentDist * amountToMirrow) % mod;
+            res = res * 2 % mod;
+            long sm = sum * 2 % mod;
+            res = (res + sm) % mod;
+            return res;
         }
 
         static long[] addNode(long currentDist, long sum, long amountToMirrow, int distance)
         {
-            currentDist = currentDist + distance * amountToMirrow;
-            sum = currentDist + sum;
+            long dt = distance * amountToMirrow % mod;
+
+            currentDist = (currentDist + dt) % mod;
+            sum = (currentDist + sum) % mod;
 
             return new long[] { sum, currentDist };
         }
-
-        
-
-        //static long sol(int n, int[] A)
-        //{
-
-        //    Dictionary<long, long> points = new Dictionary<long, long>();
-        //    HashSet<CP> CPS = new HashSet<CP>();
-        //    //points[6] = 29;
-        //    Queue<CP> Q = new Queue<CP>();
-        //    Q.Enqueue(new CP(1));
-
-        //    for (int i = 1; i <= n; i++)
-        //    {
-
-        //    }
-
-        //}
-
-        //static int step(int n, int[] A, Dictionary<long, long> points, HashSet<CP> CPS)
-        //{
-
-        //}
-        //static long connect(int cp, int d, Dictionary<long, long> points)
-        //{
-
-        //}
-
     }
-
-    //class CP
-    //{
-    //    public long number = 0;
-    //    public bool[] cn = new bool[4];
-    //    public long[] cnNumber = new long[4];
-
-    //    public CP(long n)
-    //    {
-    //        number = n;
-    //    }
-
-    //}
-
 }
