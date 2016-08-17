@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DPBiggestPerimeterChart
+namespace DPBiggestPerimeterChart2
 {
     class Program
     {
@@ -23,9 +23,9 @@ namespace DPBiggestPerimeterChart
             Console.Read();
         }
 
-             static string sol(int R, int C, string[] G)
+        static string sol(int R, int C, string[] G)
         {
-            int[,][] Gp = new int[R, C][];
+            int[,][] Gp = new int[R, C][];// left, up, perimeter
             int sum = 0;
             //getting rows
             for (int r = 0; r < R; r++)
@@ -63,32 +63,43 @@ namespace DPBiggestPerimeterChart
             int tempSum = 0;
             int tempMin = 0;
             int res = 0;
-            int[] test;
+            int maxPossible = 0;
+            //int[] test;
+            //int rl = 0;
             for (int r = 1; r < R; r++)
             {
                 for (int c = 1; c < C; c++)
                 {
                     if (Gp[r, c][1] > 0)
                     {
-                        max = 0;
-                        //tempMin = Gp[r, c][1];
-                        //if (r == 22 && c == 197)
-                        if (r == 36 && c == 70)
+                        if (r == 35 && c == 70)
                             r = r;
-                        HashSet<int> used = new HashSet<int>();
-                        for (int k = 1; k <= Gp[r, c][0]; k++)
-                        {
-                            used.Add(Gp[r, c - k][1]+1);
-                            tempMin = Math.Min(Gp[r, c - k][1], Gp[r, c][1]);
-                            for(int hh = tempMin; hh <= Gp[r, c][1]; hh++)
-                            {
-                                if (G[r - hh][c - k] == 'x')
-                                    used.Add(hh);
-                            }
 
-                            while(tempMin > 0 && used.Contains(tempMin))
+                        maxPossible = Gp[r, c][1] + Gp[r, c][0];
+                        if (maxPossible <= res)
+                            continue;
+
+                        max = 0;
+                        for (int k = Gp[r, c][1]; k > 0 ; k--)//columnh height
+                        {
+                            int minr = Math.Min(Gp[r - k, c][0], Gp[r, c][0]);
+
+                            maxPossible = Gp[r, c][0] + k;
+                            if (maxPossible <= res)
+                                break;
+
+                            maxPossible =  minr + k;
+                            if (maxPossible <= res)
+                                continue;
+
+                            tempMin = 0;
+                            for(int rl = minr; rl > 0; rl--)//row left
                             {
-                                tempMin--;
+                                if (Gp[r, c - rl][1] >= k)
+                                {
+                                    tempMin = rl;
+                                    break;
+                                }
                             }
 
                             if (tempMin > 0)
@@ -97,8 +108,8 @@ namespace DPBiggestPerimeterChart
                                 if (tempSum > max)
                                 {
                                     max = tempSum;
-                                    if(tempSum == 12)
-                                        test = new int[] { r, c, k, tempMin};
+                                    //if (tempSum == 6)
+                                    //    test = new int[] { r, c, k, tempMin };
                                 }
                             }
                         }
@@ -107,14 +118,14 @@ namespace DPBiggestPerimeterChart
                     }
 
                     res = Math.Max(Gp[r, c][2], res);
-                    if (res == 20)
-                        continue;
-                    
+                    //if (res == 20)
+                    //    continue;
+
                 }
             }
 
             string s = printChar(G, Gp, R, C);
-            return res == 0? "impossible": (res * 2).ToString();
+            return res == 0 ? "impossible" : (res * 2).ToString();
         }
 
         static string printChar(string[] G, int[,][] Gp, int R, int C)
