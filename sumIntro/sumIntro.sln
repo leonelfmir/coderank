@@ -229,6 +229,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPLongestCommonSubsequence"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPEqualCandy", "DPEqualCandy\DPEqualCandy.csproj", "{0C8679EA-E27D-4750-AF60-4969B7B60079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPEqualCandy2", "DPEqualCandy2\DPEqualCandy2.csproj", "{5DC3C334-29F8-4C14-877E-08C14DFB9D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPEqualCandy3", "DPEqualCandy3\DPEqualCandy3.csproj", "{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -687,6 +691,14 @@ Global
 		{0C8679EA-E27D-4750-AF60-4969B7B60079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C8679EA-E27D-4750-AF60-4969B7B60079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C8679EA-E27D-4750-AF60-4969B7B60079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC3C334-29F8-4C14-877E-08C14DFB9D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC3C334-29F8-4C14-877E-08C14DFB9D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC3C334-29F8-4C14-877E-08C14DFB9D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC3C334-29F8-4C14-877E-08C14DFB9D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
