@@ -233,6 +233,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPEqualCandy2", "DPEqualCan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPEqualCandy3", "DPEqualCandy3\DPEqualCandy3.csproj", "{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPCointOnTheTable", "DPCointOnTheTable\DPCointOnTheTable.csproj", "{6BF1046C-E4FD-4092-ABE1-12637A5D6F7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -699,6 +701,10 @@ Global
 		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5554D97-5DA2-4945-BEA3-1427AEE1A33F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF1046C-E4FD-4092-ABE1-12637A5D6F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF1046C-E4FD-4092-ABE1-12637A5D6F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF1046C-E4FD-4092-ABE1-12637A5D6F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF1046C-E4FD-4092-ABE1-12637A5D6F7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
